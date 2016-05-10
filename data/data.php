@@ -6,18 +6,27 @@
  * Time: 22:49
  */
 
+
+//Tableau des catalogues
+$categories = array(
+    0=>'Croisiere',
+    1=>'Aventure',
+    2=>'Sport d\hiver',
+    3=>'Nature',
+    4=>'Famille',
+      );
+
 /**
  * Tableau principal des données du site
-    Il y aura 5 types de forfaits par catégorie
+Il y aura 3 ou 4 types de forfaits par catégories
  * - nom
  * - categorie
  * - etc
  */
-
 $data = array(
     0 => array(
         'nom' => "L'atlantique emblématique",
-        'categorie' => 'Croisiere',
+        'categorie' => 0,
         'description' => "Le produit 1 bla bla bla...",
         'duree' =>14,
         'prix' => 1899.99,
@@ -27,7 +36,7 @@ $data = array(
     ),
     1 => array(
         'nom' => 'Safari',
-        'categorie' => 'Aventure',
+        'categorie' => 1,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 489.99,
         'duree' =>14,
@@ -37,7 +46,7 @@ $data = array(
     ),
     2 => array(
         'nom' => 'Motoneige (Charlevoix, Québec)',
-        'categorie' => 'Sport d\'hiver',
+        'categorie' => 2,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 88.00,
         'duree' =>10,
@@ -48,7 +57,7 @@ $data = array(
 
     3 => array(
         'nom' => 'Chiens et gîtes du grand nord',
-        'categorie' => 'Nature',
+        'categorie' => 3,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 199.00,
         'duree' =>3,
@@ -59,7 +68,7 @@ $data = array(
 
     4 => array(
         'nom' => 'Formule Hotel tout inclus',
-        'categorie' => 'Famille',
+        'categorie' => 4,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 1600.00,
         'duree' =>7,
