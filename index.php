@@ -22,9 +22,9 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="catalogue.html">Forfaits</a></li>
-                <li><a href="reserver.html">Réserver</a></li>
+            
+                <?= require_once('views/menu.php'); ?>
+            
             </ul>
         </div>
 
