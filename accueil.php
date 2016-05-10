@@ -176,4 +176,5 @@ require_once('data/data.php');//le code va cherche le tableau data
     <script type="text/javascript" src="script/jquery-2.2.3.js"></script>
     <script type="text/javascript" src="script/main.js"></script>
 </body>
+
 </html>
