@@ -14,6 +14,7 @@
  * - etc
  */
 
+
 $categories = array(
     0 => 'Croisiere',
     1 => 'Aventure',
@@ -21,18 +22,20 @@ $categories = array(
     3 => 'Nature',
     4 => 'Famille',
 );
+//var_dump($categories);
+
 
 
 $data = array(
     0 => array(
         'nom' => "L'atlantique emblématique",
-        'categorie' => 0,
+        'categorie' => $categories[0],
         'description' => "Le produit 1 bla bla bla...",
         'duree' =>14,
         'prix' => 1899.99,
         'photo' => 'images/images-modal/croisiere_01.jpg',
         'dans_carousel' => true,
-        'date' => 'd-m-y',
+        'date' => ('d-m-y'),
     ),
     1 => array(
         'nom' => 'Safari',
@@ -83,12 +86,10 @@ $data = array(
 
 );
 
+//var_dump($data);
 
-//Pour afficher le tableau
-echo '<ul>';
-foreach ($data as $categorie => $nom) {
-    echo "<li><a href='$categorie'>$nom</a></li>";
-}
-echo '</ul>';
+
+
 
 ?>
+
