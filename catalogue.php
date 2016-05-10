@@ -1,3 +1,24 @@
+<?php
+
+//Metre le require once de data.php
+//Mettre la boucle pour valider l'adresse url avec le array key exist
+
+
+?>
+
+
+<?php
+//Affichage du catalogue 5 liens
+
+//Faire affich
+
+if(!is_null($cat_id)){
+
+    echo "<h2>Les items de la categorie".$categorie[$cat_id].<
+}
+?>
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
