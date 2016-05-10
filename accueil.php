@@ -1,3 +1,25 @@
+<?php
+require_once('data/data.php');//le code va cherche le tableau data
+?>
+
+<?php //require_once ('views/menu.php'); ?>
+
+<div id="main">
+    <!-- Liens vers les categories du catalogue -->
+    <div id="liens_categories">
+        <ul>
+            <?php foreach ($categories as $cat_id => $nom) { ?>
+                <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
+            <?php } ?>
+        </ul>
+
+
+    </div>
+    <!--Code html spécifique -->
+</div>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +42,7 @@
         <div class="logo">
             <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
         </div>
-        <div class="menu">
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="catalogue.html">Forfaits</a></li>
-                <li><a href="reserver.html">Réserver</a></li>
-            </ul>
-        </div>
-
+<!--        place du menu mais fait via le foreach plus haut-->
     </header>
 
     <!-- *********** BANNER ************ -->
