@@ -45,6 +45,9 @@ require_once('data/data.php');//le code va cherche le tableau data
 <!--        place du menu mais fait via le foreach plus haut-->
     </header>
 
+
+
+
     <!-- *********** BANNER ************ -->
 
     <div id="banner">
