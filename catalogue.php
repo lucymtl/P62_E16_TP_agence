@@ -1,23 +1,45 @@
-<?php
 
-//Metre le require once de data.php
-//Mettre la boucle pour valider l'adresse url avec le array key exist
-
-
-?>
 
 
 <?php
-//Affichage du catalogue 5 liens
-
-//Faire affich
-
-if(!is_null($cat_id)){
-
-    echo "<h2>Les items de la categorie".$categorie[$cat_id].<
+require_once('data/data.php');
+// Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
+$cat_id = null;
+if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $categories)) {
+    $cat_id = $_GET['cat_id'];
 }
 ?>
-?>
+
+<div id="main">
+    <!--Code html spécifique -->
+    <?php
+    /*Affichage du catalogue*/
+    // Si il y a une categorie, afficher son nom
+    if ( ! is_null($cat_id)) {
+        echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
+    }
+    ?>
+    <ul>
+        <?php
+        foreach ($data as $id => $item) {
+            if (is_null($cat_id) || $item['categorie'] == $cat_id) {
+                ?>
+                <li><a href="detail.php?item_id=<?= $id ?>">
+                        <div>
+                            <p><?= $item['nom'] ?>
+                                , <span class=".prix"><?= $item['prix'] ?></span>
+                                , <span class=".categorie"><?= $categories[$item['categorie']] ?></span>
+                            </p>
+                            <img src="<?= $item['photo'] ?>" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <?php
+            }
+        }
+        ?>
+    </ul>
+</div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +63,7 @@ if(!is_null($cat_id)){
                 <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
             </div>
             <div class="menu">
-                <ul>
-                    <li><h2><a href="index.php">Accueil</a></h2></li>
-                    <li><h2><a href="categorie.php">Forfaits</a></h2></li>
-                    <li><h2><a href="reserver.html">Réserver</a></h2></li>
-                </ul>
+<!--                --><?php //require_once ('views/menu.php'); ?>
             </div>
 
         </header>
