@@ -135,6 +135,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
                             <h4>Infos</h4>
                         </div>
 
+
                     </div>
 
                     <div id="for-categorie">
