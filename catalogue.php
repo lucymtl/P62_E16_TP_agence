@@ -9,6 +9,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 ?>
 
 
+
 <?php
 foreach ($data as $id => $item) {
 if (is_null($cat_id) || $item['categorie'] == $cat_id) {
@@ -22,10 +23,18 @@ if (is_null($cat_id) || $item['categorie'] == $cat_id) {
     <meta charset="UTF-8">
     <title>Title</title>
 <!--    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">-->
+
+    <style>
+
+        #ongles{
+
+            background-color:red;
+        }
+
+
+    </style>
 </head>
 <body>
-
-    <div id="wrap">
         <div id="body">
             <?php
             /*Affichage du catalogue*/
@@ -34,22 +43,23 @@ if (is_null($cat_id) || $item['categorie'] == $cat_id) {
                 echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
             }
             ?>
-
                         <ul id="ongles">
                             <?php foreach ($categories as $cat_id => $nom) { ?>
                                 <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
                             <?php } ?>
                         </ul>
-            <li><a href="detail.php?item_id=<?= $id ?>">
+
                     <div>
-                        <li><?= $item['nom'] ?></li>
+                        <ul>
+                        <li><?= $item['nom'] ?></li></ul>
+                        , <h3 class=".description"><?= $item['description'] ?></h3>
                         , <h3 class=".prix"><?= $item['prix'] ?></h3>
                         , <h4 class=".categorie"><?= $categories[$item['categorie']] ?></h4>
 
                         <img src="<?= $item['photo'] ?>" alt=""/>
                     </div>
                 </a>
-            </li>
+
             <?php
             }
             }
