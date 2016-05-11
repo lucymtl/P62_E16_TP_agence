@@ -9,5 +9,7 @@ $menu = array(
     APROPOS  => 'apropos.php',
     /*'Catalogue' => 'catalogue.php',*/
     CONTACT  => 'formulaire.php',
+    CONTACT  => 'formulaire.php',
 
 );
+?>
