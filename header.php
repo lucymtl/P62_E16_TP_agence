@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-</head>
-<body>
+<?php require_once ('data/defines.php');?>
 
-<div id="wrap">
     <!-- *********** HEADER ************ -->
     <header>
         <div class="social_media">
