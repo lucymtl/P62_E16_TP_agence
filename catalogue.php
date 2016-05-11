@@ -1,6 +1,4 @@
 
-
-
 <?php
 require_once('data/data.php');
 // Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
@@ -10,35 +8,16 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 }
 ?>
 
+
+<?php
+foreach ($data as $id => $item) {
+if (is_null($cat_id) || $item['categorie'] == $cat_id) {
+?>
+
 <div id="main">
     <!--Code html spécifique -->
-    <?php
-    /*Affichage du catalogue*/
-    // Si il y a une categorie, afficher son nom
-    if ( ! is_null($cat_id)) {
-        echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
-    }
-    ?>
-    <ul>
-        <?php
-        foreach ($data as $id => $item) {
-            if (is_null($cat_id) || $item['categorie'] == $cat_id) {
-                ?>
-                <li><a href="detail.php?item_id=<?= $id ?>">
-                        <div>
-                            <p><?= $item['nom'] ?>
-                                , <span class=".prix"><?= $item['prix'] ?></span>
-                                , <span class=".categorie"><?= $categories[$item['categorie']] ?></span>
-                            </p>
-                            <img src="<?= $item['photo'] ?>" alt=""/>
-                        </div>
-                    </a>
-                </li>
-                <?php
-            }
-        }
-        ?>
-    </ul>
+
+
 </div>
 
 <!DOCTYPE html>
@@ -77,87 +56,84 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
         <!-- START BODY -->
 
         <div id="body">
-
+            <?php
+            /*Affichage du catalogue*/
+            // Si il y a une categorie, afficher son nom
+            if ( ! is_null($cat_id)) {
+                echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
+            }
+            ?>
             <!-- *********** CATEGORIES ************ -->
 
                 <div id="tab_control">
                 <div id="header">
-                    <ul id="ongles">
-                        <li>
+                        <ul id="ongles">
+                            <?php foreach ($categories as $cat_id => $nom) { ?>
+                                <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
+                            <?php } ?>
+                        </ul>
 
-                            <div class="ongle">
-                                <span>Croisière</span>
-                            </div>
-
-                        </li>
-                        <li>
-
-                            <div class="ongle">
-                                <span>Aventure</span>
-                            </div>
-
-                        </li>
-                        <li>
-
-                            <div class="ongle">
-                                <span>Sports d'hive</span>
-                            </div>
-
-                        </li>
-                        <li>
-
-                            <div class="ongle">
-                                <span>Nature</span>
-                            </div>
-
-                        </li>
-
-                    </ul>
 
                 </div>
 
                 <div id="for-categorie">
                     <div class="forfait_categorie">
-                        <div class="for-img">
-                            <img src="images/cat-img01.jpg" />
-                        </div>
-                        <div class="for-info">
-                            <h3>Tittle</h3>
-                            <h4>Infos</h4>
-                        </div>
+<!--                        <div class="for-img">-->
+<!--                            <img src="images/cat-img01.jpg" />-->
+<!--                        </div>-->
+<!--                        <div class="for-info">-->
+<!--                            <h3>Tittle</h3>-->
+<!--                            <h4>Infos</h4>-->
+<!--                        </div>-->
+
+
+
+                                    <li><a href="detail.php?item_id=<?= $id ?>">
+                                            <div>
+                                                <h3><?= $item['nom'] ?></h3>
+                                                    , <h4 class=".prix"><?= $item['prix'] ?></h4>
+                                                    , <h4 class=".categorie"><?= $categories[$item['categorie']] ?></h4>
+
+                                                <img src="<?= $item['photo'] ?>" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                            }
+                            ?>
                     </div>
-                    <div class="forfait_categorie2">
-                        <div class="for-img">
-                            <img src="images/cat-img01.jpg" />
-                        </div>
-                        <div class="for-info">
-                            <h3>Tittle</h3>
-                            <h4>Infos</h4>
-                        </div>
-
-
-                    </div>
-
-                    <div id="for-categorie">
-                        <div class="forfait_categorie">
-                            <div class="for-img">
-                                <img src="images/cat-img01.jpg" />
-                            </div>
-                            <div class="for-info">
-                                <h3>Tittle</h3>
-                                <h4>Infos</h4>
-                            </div>
-                        </div>
-                        <div class="forfait_categorie2">
-                            <div class="for-img">
-                                <img src="images/cat-img01.jpg" />
-                            </div>
-                            <div class="for-info">
-                                <h3>Tittle</h3>
-                                <h4>Infos</h4>
-                            </div>
-
-                        </div>
+<!--                    <div class="forfait_categorie2">-->
+<!--                        <div class="for-img">-->
+<!--                            <img src="images/cat-img01.jpg" />-->
+<!--                        </div>-->
+<!--                        <div class="for-info">-->
+<!--                            <h3>Tittle</h3>-->
+<!--                            <h4>Infos</h4>-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+<!---->
+<!--                    <div id="for-categorie">-->
+<!--                        <div class="forfait_categorie">-->
+<!--                            <div class="for-img">-->
+<!--                                <img src="images/cat-img01.jpg" />-->
+<!--                            </div>-->
+<!--                            <div class="for-info">-->
+<!--                                <h3>Tittle</h3>-->
+<!--                                <h4>Infos</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="forfait_categorie2">-->
+<!--                            <div class="for-img">-->
+<!--                                <img src="images/cat-img01.jpg" />-->
+<!--                            </div>-->
+<!--                            <div class="for-info">-->
+<!--                                <h3>Tittle</h3>-->
+<!--                                <h4>Infos</h4>-->
+<!--                            </div>-->
+<!---->
+<!--                        </div>-->
                     <!--<div class="forfait">
                         <div class="for-img">
                             <img src="images/cat-sport_hiver01.jpg" />
@@ -177,7 +153,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
                         </div>
                     </div>-->
 
-                </div>
+
               </div>
 
         </div><!-- END body -->
