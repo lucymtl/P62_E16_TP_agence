@@ -13,3 +13,4 @@ $menu = array(
 
 );
 ?>
+<!--//Faire un define pour le photos et inclure dans data pour appel-->
