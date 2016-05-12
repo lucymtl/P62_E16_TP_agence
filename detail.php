@@ -16,7 +16,7 @@ if (array_key_exists('item_id', $_GET)) {
 // Il faut vérifier que la valeur de l'id est bonne
 $categories = $data[$cat_id];
 ?>
-<?php require_once ('views/page_top.php'); ?>
+<?php //require_once ('views/page_top.php'); ?>
     <div id="main">
         <div>
             <p><?= $categories['nom'] ?>, <span class=".prix"><?= $categories['prix'] ?></span></p>
@@ -25,4 +25,4 @@ $categories = $data[$cat_id];
 
         <!--Code html spécifique -->
     </div>
-<?php require_once ('views/page_bottom.php'); ?>
+<?php //require_once ('views/page_bottom.php'); ?>
