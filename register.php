@@ -7,7 +7,7 @@
  */
 
 
-<?php require_once 'header.php'?>
+<?php //require_once 'header.php'?>
 <h1>S'incrire</h1>
 <form action="" method="post">
     <div class="form-group">
@@ -45,5 +45,5 @@
 </form>
 
 
-<?php require_once 'footer.php'?>
+<?php //require_once 'footer.php'?>
 
