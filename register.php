@@ -32,8 +32,6 @@
 
     </div>
 
-
-
     <div class="form-group" >
         <label for ="">Confirmez votre mot de passe</label>
 
@@ -43,7 +41,14 @@
 
 <button type="submit">M'inscrire</button>
 </form>
+<form class="loggoff" action="" method="post">
 
+    <div class="form-group" >
+
+        <button type="submit">SUBMIT</button>
+
+    </div>
+</form>
 
 <?php //require_once 'footer.php'?>
 
