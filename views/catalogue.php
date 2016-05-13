@@ -42,60 +42,7 @@
                     </div>
                 </a>
             </li>
-            <?php
-            }
-            }
-            ?>
-        </div>
-        <!--                    <div class="forfait_categorie2">-->
-        <!--                        <div class="for-img">-->
-        <!--                            <img src="images/cat-img01.jpg" />-->
-        <!--                        </div>-->
-        <!--                        <div class="for-info">-->
-        <!--                            <h3>Tittle</h3>-->
-        <!--                            <h4>Infos</h4>-->
-        <!--                        </div>-->
-        <!---->
-        <!--                    </div>-->
-        <!---->
-        <!--                    <div id="for-categorie">-->
-        <!--                        <div class="forfait_categorie">-->
-        <!--                            <div class="for-img">-->
-        <!--                                <img src="images/cat-img01.jpg" />-->
-        <!--                            </div>-->
-        <!--                            <div class="for-info">-->
-        <!--                                <h3>Tittle</h3>-->
-        <!--                                <h4>Infos</h4>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                        <div class="forfait_categorie2">-->
-        <!--                            <div class="for-img">-->
-        <!--                                <img src="images/cat-img01.jpg" />-->
-        <!--                            </div>-->
-        <!--                            <div class="for-info">-->
-        <!--                                <h3>Tittle</h3>-->
-        <!--                                <h4>Infos</h4>-->
-        <!--                            </div>-->
-        <!---->
-        <!--                        </div>-->
-        <!--<div class="forfait">
-            <div class="for-img">
-                <img src="images/cat-sport_hiver01.jpg" />
-            </div>
-            <div class="for-info">
-                <h2>Tittle</h2>
-                <h3>Infos</h3>
-            </div>
-        </div>
-        <div class="forfait">
-            <div class="for-img">
-                <img src="images/cat-sport_hiver01.jpg" />
-            </div>
-            <div class="for-info">
-                <h2>Tittle</h2>
-                <h3>Infos</h3>
-            </div>
-        </div>-->
+
 
 
     </div>
