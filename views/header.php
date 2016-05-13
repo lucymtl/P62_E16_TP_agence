@@ -15,6 +15,9 @@
             <ul>
                 <?= require_once('views/menu.php'); ?>
             </ul>
+<!--            IL FAUT METTRE LE HTML DU MENU PAS LE REQUIRE ONCE-->
         </div>
 
     </header>
+
+<!--METTRE LE PHP REQUIRE ONCE LOGGIN LOGOUT FORM-->
