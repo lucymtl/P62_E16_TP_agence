@@ -1,69 +1,3 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire de réservation de Boreale Agence de Voyages</title>
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-    <style>
-        .display{
-            display:block!important;
-        }
-        .invalid{
-            border:2px solid red;
-        }
-        fieldset:nth-of-type(2) > label:last-of-type {
-            display: inline-block;
-        }
-        legend{
-            font-size : 18pt;
-            color: #d87000;
-        }
-        #details_recapitulatif {
-            font-family: Arial, Verdana, sans-serif;
-        }
-        #details_recapitulatif ul{
-            list-style-type: disc;
-            padding-left: 40px;
-            margin-bottom: 20px;
-        }
-    </style>
-
-</head>
-<body>
-
-
-<div id="wrap">
-    <!-- *********** HEADER ************ -->
-    <header>
-        <div class="social_media">
-            <ul>
-                <li><img src="images/fb-icon.png" alt = "Suivez-nous sur facebook" /></li>
-                <li><img src="images/youtube-icon.png" alt = "Suivez-nous sur youtube" /></li>
-            </ul>
-        </div>
-        <div class="logo">
-            <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="catalogue.html">Forfaits</a></li>
-                <li><a href="reserver.html">Réserver</a></li>
-            </ul>
-        </div>
-
-    </header>
-
-    <!-- *********** BANNER ************ -->
-
-    <div id="banner">
-        <img src="images/banner-sport_hiver.png" alt="Voyage sur la neige" />
-    </div>
-
-    <!-- START BODY -->
-
     <div class="main" id="main_reserver">
 
         <!-- *********** PAS DE SLIDER ***********-->
@@ -71,7 +5,7 @@
         <h1>Formulaire de réservation</h1>
         <!-- *********** FORM ************ -->
 
-        <form action="reserver.php" method="post" name="form_resa" id="form_resa" novalidate="novalidate">
+        <form action="mail_send.php" method="post" name="form_resa" id="form_resa" novalidate="novalidate">
 
 
 
@@ -80,9 +14,6 @@
                 <legend>Vos coordonnées</legend>
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" value="">
-                <?php if(isset($_SESSION['error1'])){ echo $_SESSION['error1']; } else { echo ""; } unset($_SESSION['error1']); ?>
-
-
                 <p class="msg_erreur"  id="erreur_prenom">Veuillez saisir votre prénom.</p>
                 <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" name="prenom" value="">
@@ -123,84 +54,12 @@
                     </optgroup>
                 </select>
 
-                <p class="msg_erreur" id="erreur_date">Veuillez sélectionner une date de départ.</p>
-                <p class="msg_erreur" id="erreur_participants">Veuillez sélectionner le nombre de participants.</p>
-                <p class="msg_erreur">Veuillez sélectionner le nombre d'animaux.</p>
-
-                <div id="calendrier">
-                    <label for="date_commande">Date de départ :</label>
-                    <input type="text" id="date_commande" name="date" value="">
-                </div>
-                <label for="nb_participants" class="right">Participants :</label>
-                <input type="number" id="nb_participants" name="nb_participants" value="1" min="1">
-
-                <label for="nb_animaux" class="right">Animaux :</label>
-                <input type="number" id="nb_animaux" name="nb_animaux" value="0" min="0" max="2">
 
             </fieldset><!-- end INFOS FORFAIT-->
 
-            <!-- TABLEAU RÉCAPITULATIF-->
-            <div id="overlay">
-                <div id="rideau"></div>
-            </div>
-            <fieldset id = "recapitulatif">
-                <div class="buttons">
-                    <a href="" class="ok">ok</a>
-                    <a href="" class="cancel">X</a>
-                </div>
-                <legend>Récapitulatif de votre réservation</legend>
-                <div id="details_recapitulatif">
-                    <h4>Détails de votre forfait :</h4>
-                    <ul>
-                        <li>Début du séjour : <span id="date_debut"></span></li>
-                        <li>Fin du séjour : <span id="date_fin"></span></li>
-                        <li>Durée du séjour : <span id="duree"></span> </li>
-                        <li>Options et coût du séjour :</li>
-                    </ul>
-                </div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Options</th>
-                        <th>Quantité</th>
-                        <th>Prix</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <td></td>
-                        <td id="prix_total">Prix total :</td>
-                        <td>0</td>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Supplément animaux de compagnie :</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    </tbody>
-
-
-                </table>
-
-
-            </fieldset><!-- end TABLEAU RÉCAPITULATIF -->
 
             <a href="#"><input id="btn_submit" type="submit" value="Réserver"></a>
 
         </form><!-- END form -->
     </div><!-- END body -->
-</div><!-- END wrap -->
-<footer>
-</footer>
-
-
-</body>
-</html>
 
