@@ -42,11 +42,7 @@
                     </div>
                 </a>
             </li>
-            <?php
-            }
-            }
-            ?>
-        </div>
+
         <!--                    <div class="forfait_categorie2">-->
         <!--                        <div class="for-img">-->
         <!--                            <img src="images/cat-img01.jpg" />-->
