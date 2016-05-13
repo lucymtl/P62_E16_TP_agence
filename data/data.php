@@ -78,7 +78,7 @@ $data = array(
         'date' => 'd-m-y',
     ),
     5 => array(
-        'nom' => 'Safari1',
+        'nom' => 'Safari 1',
         'categorie' => 1,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 489.99,
@@ -100,7 +100,7 @@ $data = array(
     ),
 
     7 => array(
-        'nom' => 'Safari3',
+        'nom' => 'Safari 3',
         'categorie' => 1,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 489.99,
@@ -110,7 +110,7 @@ $data = array(
         'date' => 'd-m-y',
     ),
     8 => array(
-        'nom' => 'Safari4',
+        'nom' => 'Safari 4',
         'categorie' => 1,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 489.99,
@@ -134,7 +134,7 @@ $data = array(
     ),
 
     10 => array(
-        'nom' => 'Motoneige2 (Charlevoix, Québec)',
+        'nom' => 'Motoneige 2 (Charlevoix, Québec)',
         'categorie' => 2,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 88.00,
@@ -145,7 +145,7 @@ $data = array(
     ),
 
     11 => array(
-        'nom' => 'Motoneige3 (Charlevoix, Québec)',
+        'nom' => 'Motoneige 3 (Charlevoix, Québec)',
         'categorie' => 2,
         'description' => "Le produit 1 bla bla bla...",
         'prix' => 88.00,
