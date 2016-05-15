@@ -1,11 +1,7 @@
 
-/**
- * Created by PhpStorm.
- * User: findomba
- * Date: 2016-05-11
- * Time: 19:09
- */
-
+<?php require_once('data/data.php');//le code va cherche le tableau data?>
+<?php require_once('top.php');//le code va cherche le tableau data?>
+<?php require_once('views/banner.php'); ?>
 <?php
 require_once('data/data.php');
 //    var_dump($_GET);
@@ -25,4 +21,7 @@ $categories = $data[$cat_id];
 
         <!--Code html spécifique -->
     </div>
-<?php //require_once ('views/page_bottom.php'); ?>
+
+<?php require_once('views/video.php'); ?>
+<?php require_once('views/forfaits.php'); ?>
+<?php require_once ('views/footer.php'); ?>
