@@ -1,14 +1,10 @@
 
-/**
- * Created by PhpStorm.
- * User: findomba
- * Date: 2016-05-11
- * Time: 21:50
- */
+<?php require_once('data/data.php');//le code va cherche le tableau data?>
+<?php require_once('top.php');//le code va cherche le tableau data?>
 
 
-<?php //require_once 'header.php'?>
-<h1>S'incrire</h1>
+
+<h3>S'incrire</h3>
 <form action="" method="post">
     <div class="form-group">
 
@@ -45,5 +41,5 @@
 </form>
 
 
-<?php //require_once 'footer.php'?>
-
+<?php require_once('views/forfaits.php'); ?>
+<?php require_once ('views/footer.php'); ?>
