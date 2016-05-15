@@ -1,65 +1,112 @@
-    <div class="main" id="main_reserver">
-
-        <!-- *********** PAS DE SLIDER ***********-->
-
-        <h1>Formulaire de réservation</h1>
-        <!-- *********** FORM ************ -->
-
-        <form action="mail_send.php" method="post" name="form_resa" id="form_resa" novalidate="novalidate">
-
-
-
-            <!-- INFOS CLIENT-->
-            <fieldset>
-                <legend>Vos coordonnées</legend>
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="">
-                <p class="msg_erreur"  id="erreur_prenom">Veuillez saisir votre prénom.</p>
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" value="">
-                <p class="msg_erreur" id="erreur_email">Veuillez saisir un courriel valide.</p>
-                <label for="email">Courriel</label>
-                <input type="email" id="email" name="email" value="">
-                <p class="msg_erreur"  id="erreur_tel">Veuillez saisir votre numéro de téléphone au format : (555)555-5555.</p>
-                <label for="tel">Téléphone</label>
-                <input type="tel" id="tel" name="tel" value="" placeholder ="(555)555-5555">
-                <p class="msg_erreur" id="erreur_adresse">Veuillez saisir votre adresse.</p>
-                <label for="adresse">Adresse</label>
-                <textarea id="adresse" name="adresse" rows="10"></textarea>
-            </fieldset><!-- end INFOS CLIENT-->
-
-            <!-- INFOS FORFAIT-->
-            <fieldset>
-                <legend>Votre forfait</legend>
-                <p class="msg_erreur" id="erreur_choix_forfait">Veuillez sélectionner un forfait.</p>
-                <label for="choix_forfait">Sélectionner votre forfait :</label>
-                <select id="choix_forfait" name="choix_forfait">
-                    <optgroup label="Croisière">
-                        <option value="0">L'atlantique emblématique</option>
-                        <option value="1">Capitales scandinaves</option>
-                        <option value="2">Du Groenland au St Laurent</option>
-                        <option value="3">Croisière des ours blancs</option>
-                    </optgroup>
-                    <optgroup label="Sports d'hiver">
-                        <option value="4">Motoneige (Charlevoix, Québec)</option>
-                        <option value="5">Sommets du St Laurent en ski</option>
-                        <option value="6">Ski de fond raquette à Tremblant</option>
-                        <option value="7">Via ferrata des glaces</option>
-                    </optgroup>
-                    <optgroup label="Aventure">
-                        <option value="8">Trekking du grand nord en hydravion</option>
-                        <option value="9">Chiens et gîtes du grand nord</option>
-                        <option value="10">Au sommet de l'Everest (8850 m.)</option>
-                        <option value="11">Sermilik, la route des icebergs</option>
-                    </optgroup>
-                </select>
+<?= require_once('data/data.php'); ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de réservation de Boreale Agence de Voyages</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 
 
-            </fieldset><!-- end INFOS FORFAIT-->
+</head>
+<body>
+
+<div class="main" id="wrap">
+    
+    <form method="post" action="reserver.php"><!-- Par défaut la méthode est get-->
+        <p <?= $receiving && ( ! $nom_valide) ? 'class="invalide"' : '' ?>>
+            <label for="nom">Nom :</label>
+            <input id="nom" type="text" name="nom" value="<?= $nom ?>"/>
+            <?php if ($receiving && ( ! $nom_valide)) {
+                echo "<br/><span class='msg_validation' style='color: red'>($nom_msg_validation)<span>";
+            } ?>
+        </p>
+
+        <p <?= $receiving && ( ! $email_valide) ? 'class="invalide"' : '' ?>>
+            <label for="email">Courriel :</label>
+            <input id="email" type="text" name="email" value="<?= $email ?>"/>
+            <?php if ($receiving && ( ! $email_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($email_msg_validation)<span>";
+            } ?>
+        </p>
+ 
+        <p <?= $receiving && ( ! $forfait_valide) ? 'class="invalide"' : '' ?>><label id="forfait" for="forfait">Forfaits :</label>
+            <select id="forfait" name="forfait">
+                <option value="(none)" <?= '(none)' == $forfait ? 'selected="selected"' : '' ?>>Choisir le forfait</option>
+                <option value="Croisiére" <?= 'Croisiére' == $forfait ? 'selected="selected"' : '' ?>>Croisiére</option>
+                <option value="Family" <?= 'Family' == $forfait ? 'selected="selected"' : '' ?>>Family</option>
+                <option value="Sport d'hiver" <?= "Sport d'hiver" == $forfait ? 'selected="selected"' : '' ?>>Sport d'hiver</option>
+                <option value="Nature" <?= 'Nature' == $forfait ? 'selected="selected"' : '' ?>>Nature</option>
+            </select>
+            <?php if ($receiving && (!$forfait_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($forfait_msg_validation)<span>";
+            } ?>
+        </p>
 
 
-            <a href="#"><input id="btn_submit" type="submit" value="Réserver"></a>
+        <!-- Nombre des personnes -->
+
+        <p <?= $receiving && ( ! $forfait_valide) ? 'class="invalide"' : '' ?>><label for="Nombre_adultes">Nombre d'adultes :</label>
+            <select id="Nombre_adultes" name="Nombre_adultes">
+                <option value="1 personnes" <?= '1 personnes' == $forfait ? 'selected="selected"' : '' ?>>1 personnes</option>
+                <option value="2 personnes" <?= '2 personnes' == $forfait ? 'selected="selected"' : '' ?>>2 personnes</option>
+                <option value="3 personnes" <?= "3 personnes" == $forfait ? 'selected="selected"' : '' ?>>3 personnes</option>
+                <option value="4 ou plus" <?= '4 ou plus' == $forfait ? 'selected="selected"' : '' ?>>4 ou plus</option>
+            </select>
+            <?php if ($receiving && (!$Nombre_adultes_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($Nombre_adultes_msg_validation)<span>";
+            } ?>
+        </p>
+
+        <!-- sexe -->
+        
+        <p <?= $receiving && ( ! $sexe_valide) ? 'class="invalide"' : '' ?>><label name="homme" for="sexe_h">Homme :</label>
+            <input type="radio" id="sexe_h" name="sexe" value="sexe_h"
+                <?= $receiving && ('sexe_h' == $sexe) ? 'checked="checked"' : '' ?>
+            />
+            <label for="sexe_f">Femme :</label>
+            <input type="radio" id="sexe_f" name="sexe" value="sexe_f"
+                <?= $receiving && ('sexe_f' == $sexe) ? 'checked="checked"' : '' ?>
+            />
+            <?php if ($receiving && (!$sexe_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($sexe_msg_validation)<span>";
+            } ?>
+        </p>
+
+        <!-- Champs checkbox -->
+
+        <p <?= $receiving && ( ! $opitons_valide) ? 'class="invalide"' : '' ?>>
+            <label for="opitons_lecteur">opitons1 :</label>
+            <input type="checkbox" id="opitons_lecteur" name="opitons[]" value="opitons_lecteur"
+                <?= $receiving && is_array($opitons) && in_array('opitons_lecteur',$opitons) ? 'checked="checked"' : '' ?>
+            />
+            <label for="opitons_redacteur">opitons2 :</label>
+            <input type="checkbox" id="opitons_redacteur" name="opitons[]" value="opitons_redacteur"
+                <?= $receiving && is_array($opitons) && in_array('opitons_redacteur',$opitons) ? 'checked="checked"' : '' ?>
+            />
+            <label for="opitons_moderateur">opitons3 :</label>
+            <input type="checkbox" id="opitons_moderateur" name="opitons[]" value="opitons_moderateur"
+                <?= $receiving && is_array($opitons) && in_array('opitons_moderateur',$opitons) ? 'checked="checked"' : '' ?>
+            />
+            <?php if ($receiving && (!$opitons_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($opitons_msg_validation)<span>";
+            } ?>
+        </p>
+
+        <!-- Champ comentaire (textarea) -->
+
+        <p <?= $receiving && ( ! $commentaire_valide) ? 'class="invalide"' : '' ?>>
+            <label for="nom">Commentaire :</label>
+            <textarea id="commentaire" name="commentaire" ><?= $commentaire ?></textarea>
+            <?php if ($receiving && ( ! $commentaire_valide)) {
+                echo "<span class='msg_validation' style='color: red'>($commentaire_msg_validation)<span>";
+            } ?>
+        </p>
+
+        <p style="clear: both;"><a href="<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">Suprimer les donnés</a></p>
+        <p><input id="submit" type="submit" name="soumettre" value="Soumettre"/></p>
 
         </form><!-- END form -->
+
     </div><!-- END body -->
 
