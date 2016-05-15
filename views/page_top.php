@@ -16,4 +16,3 @@
     </head>
     <body>
     <div id="wrapper">
-<?php //require_once ('header.php'); ?>

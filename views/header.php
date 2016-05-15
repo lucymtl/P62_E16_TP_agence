@@ -1,9 +1,5 @@
 <?php require_once ('data/defines.php');?>
 
-
-
-
-
     <!-- *********** HEADER ************ -->
     <header>
         <div class="social_media">
@@ -16,6 +12,7 @@
             <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
         </div>
         <div id="header">
+            <h1> AGENCE DE VOYAGE</h1>
             <ul>
                 <?php
                 // Afficher le menu avec un foreach
@@ -26,8 +23,6 @@
             </ul>
         </div>
 
-
-        <h1>Bonjour Bienvenue CHEZ AGENCE DE VOYAGE</h1>
         <h2>Consultez notre catalogue</h2>
 
 <?php
