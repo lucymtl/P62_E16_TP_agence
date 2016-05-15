@@ -2,8 +2,6 @@
 <div id="categories">
     <hr>
     <div id="for-content">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-        <p> In ac luctus dolor. Vestibulum enim ipsum, fringilla ut sagittis nec, <br/>egestas a dui. Suspendisse pellentesque ante tempus imperdiet volutpat.</p>
         <div class="forfait">
             <div class="for-img">
                 <a href="catalogue.html?categorie=croisieres"><img src="images/cat-nature01.jpg" /></a>
