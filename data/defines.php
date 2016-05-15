@@ -8,8 +8,8 @@ $menu = array(
     ACCUEIL => 'accueil.php',
     APROPOS  => 'apropos.php',
     /*'Catalogue' => 'catalogue.php',*/
-    CONTACT  => 'formulaire.php',
-    CONTACT  => 'formulaire.php',
+    CONTACT  => 'contact.php',
+    lero  => 'formulaire.php',
 
 );
 ?>
