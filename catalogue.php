@@ -8,34 +8,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<!--    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">-->
-<style>
-    img{
-        width :260px;
-    }
-
-    #toto{
-
-        background-color:red ;
-        width: 500px;
-
-    }
-
-    li{
-        list-style-type:none
-    }
-
-</style>
-
-</head>
-
-
-<body>
+<?php require_once ('top.php'); ?>
 
 <?php //require_once ('views/page_top.php'); ?>
 <div id="main">
@@ -74,9 +47,4 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 </div>
 <h2>VOTRE PANIER EST VIDE</h2>
 <li><a href="accueil.php"/a>Retour a l'accueil</li>
-
-
-</body>
-
-</html>
-
+<?php require_once ('footer.php'); ?>
