@@ -268,6 +268,7 @@ div ul  {
 footer{
     clear: both;
     height: 90px;
+    margin-top: 30px;
     background-image: url(../images/footer.jpg);
 }
 
