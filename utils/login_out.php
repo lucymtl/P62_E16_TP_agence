@@ -21,7 +21,7 @@ if (array_key_exists('connect', $_POST)
     // L'utilisateur cherche à se connecter ....
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    require_once('data/authenticate.php'); // Appel du script qui gère l'authentification
+    require_once('data/_authenticate.php'); // Appel du script qui gère l'authentification
     if (authenticate($username, $password)) {
         // L'utilisateur est authentifié
         $_SESSION[PSESS_USERNAME] = $username;
