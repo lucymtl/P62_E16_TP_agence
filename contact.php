@@ -1,4 +1,4 @@
-<?= require_once('data/data.php'); ?>
+<?= require_once('data/form.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
