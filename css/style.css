@@ -561,3 +561,13 @@ p.msg_erreur{
     color: Orange;
     text-align: left;
 }
+li div#toto img{
+    width :260px;
+}
+#toto{
+    background-color:red ;
+    width: 500px;
+}
+li#cat_toto{
+    list-style-type:none
+}
