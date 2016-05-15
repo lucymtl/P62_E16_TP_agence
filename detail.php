@@ -1,13 +1,8 @@
 
-/**
- * Created by PhpStorm.
- * User: findomba
- * Date: 2016-05-11
- * Time: 19:09
- */
 
 <?php
 require_once('data/data.php');
+require_once('utils/login_out.php');
 //    var_dump($_GET);
 $cat_id = 0; // Initialiser au premier des items
 if (array_key_exists('item_id', $_GET)) {
@@ -26,3 +21,6 @@ $categories = $data[$cat_id];
         <!--Code html spécifique -->
     </div>
 <?php //require_once ('views/page_bottom.php'); ?>
+
+
+
