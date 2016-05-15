@@ -1,15 +1,7 @@
-<?= require_once('data/form.php'); ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire de réservation de Boreale Agence de Voyages</title>
-    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+<?php require_once('data/data.php');//le code va cherche le tableau data?>
+<?php require_once('top.php');//le code va cherche le tableau data?>
+<?php require_once('views/banner.php'); ?>
 
-
-</head>
-<body>
 
 <div class="main" id="wrap">
     
@@ -110,3 +102,6 @@
 
     </div><!-- END body -->
 
+
+<?php require_once('views/forfaits.php'); ?>
+<?php require_once ('views/footer.php'); ?>
