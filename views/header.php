@@ -1,5 +1,9 @@
 <?php require_once ('data/defines.php');?>
 
+
+
+
+
     <!-- *********** HEADER ************ -->
     <header>
         <div class="social_media">
@@ -11,13 +15,24 @@
         <div class="logo">
             <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
         </div>
-        <div class="menu">
+        <div id="header">
             <ul>
-                <?= require_once('views/menu.php'); ?>
+                <?php
+                // Afficher le menu avec un foreach
+                foreach ($menu as $libelle => $url) {
+                    echo "<li><a href='$url'>$libelle</a></li>";
+                }
+                ?>
             </ul>
-<!--            IL FAUT METTRE LE HTML DU MENU PAS LE REQUIRE ONCE-->
         </div>
 
-    </header>
 
-<!--METTRE LE PHP REQUIRE ONCE LOGGIN LOGOUT FORM-->
+        <h1>Bonjour Bienvenue CHEZ AGENCE DE VOYAGE</h1>
+        <h2>Consultez notre catalogue</h2>
+
+<?php
+require_once('login_out_form.php');
+?>
+
+
+
