@@ -16,7 +16,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 <!--<!--    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">-->
 
 
-<?php require_once ('views/header.php'); ?>
+
 <style>
     #toto img {
         width :260px;
