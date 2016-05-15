@@ -1,7 +1,7 @@
 
 body {
     margin: 0 auto;
-    /*background: url("../images/background.jpg") no-repeat center top;*/
+    background: url("../images/background.jpg") no-repeat top ;
     background-color: #e7e8ea;
     width: 100%;
     font-family: 'Oswald', sans-serif;
@@ -15,19 +15,7 @@ body {
 
 }
 
-header{
-    padding-top: 50px;
-    height: 110px;
-}
 
-header > div {
-    display: inline-block;
-    width: 33%;
-    text-align: center;
-}
-.social_media ul li {
-    padding: 10px;
-}
 
 #banner{
     /*position: relative;*/
@@ -109,13 +97,38 @@ header ul li {
     line-height: 10%;
 
 }*/
+header{
+    padding-top: 50px;
+    height: 110px;
+    width:100%;
+}
+
+header > div {
+    display: inline;
+
+
+}
+.social_media ul li {
+
+    float: right;
+    margin-left: 15px;
+
+
+}
+
 .logo{
     /*margin-left: 300px;*/
-    /*float: left;*/
+    float: left;
+    width: 30%;
+
+
 }
 .menu{
     /*float: right;*/
-    text-align: right;
+    margin-top: 40px;
+    text-align: center;
+
+
 }
 .menu ul {
     width: 100%;
@@ -123,7 +136,9 @@ header ul li {
 }
 .menu ul li {
 
-    padding: 20px 50px 20px 0px;
+    padding: 20px 50px 20px 0;
+    margin-left: 10px;
+    border-bottom: 5px solid orange;
 }
 
 #for-categorie{
