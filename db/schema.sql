@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 03 Janvier 2016 à 19:53
+-- Généré le :  Lun 16 Mai 2016 à 12:42
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -17,57 +17,71 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `p62_dbkitdem`
+-- Base de données :  `tp_projet_php`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product`
+-- Structure de la table `forfait`
 --
 
-CREATE TABLE IF NOT EXISTS `product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) produit',
-  `name` varchar(256) NOT NULL COMMENT 'Nom du produit',
-  `category_id` int(11) DEFAULT NULL COMMENT 'Catégorie à laquelle appartient le produit',
-  `description` varchar(1024) NOT NULL COMMENT 'Description du produit',
-  `price` decimal(8,2) DEFAULT NULL COMMENT 'Prix du produit',
-  `is_online` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Indique si le produit est affiché ou pas',
+CREATE TABLE IF NOT EXISTS `forfait` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) de l''article',
+  `name` varchar(256) NOT NULL COMMENT 'Nom de l''article ',
+  `category_id` int(11) DEFAULT NULL COMMENT 'Catégorie à laquelle appartient l''article',
+  `description` varchar(1024) NOT NULL COMMENT 'Description de l''article',
+  `duree` tinyint(4) NOT NULL COMMENT 'duree forfait',
+  `picture` varchar(128) NOT NULL COMMENT 'Photo de l''article',
+  `price` decimal(8,2) DEFAULT NULL COMMENT 'Prix de l''article',
+  `is_online` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Indique si l''article est affiché ou pas',
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des produits du site' AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des articles (forfaits, livres, metériel, etc...) du site' AUTO_INCREMENT=52 ;
 
 --
--- Contenu de la table `product`
+-- Contenu de la table `forfait`
 --
 
-INSERT INTO `product` (`id`, `name`, `category_id`, `description`, `price`, `is_online`) VALUES
-(1, 'Céline au Centre Bell', 1, 'Bla bla bla en HTML', '159.99', 1),
-(2, 'Grand prix cycliste de Montréal', 2, 'Bla bla bla en HTML', '98.90', 1),
-(3, 'Lady Gaga au centre Bell', 1, 'Bla bla bla en HTML', '134.00', 1),
-(4, 'Formule 1 au Parc Jean Drapeau', 2, 'Bla bla bla en HTML', '225.00', 1),
-(5, 'Concert des Fifty Six', 1, 'Bla bla bla en HTML', '112.00', 1);
-
--- --------------------------------------------------------
-
+INSERT INTO `forfait` (`name`, `category_id`, `description`, `duree`, `picture`, `price`, `is_online`) VALUES
+  ('Latlantique emblématique', 1, 'Bla bla bla en HTML', 14, 'images/croisiere_01.jpg', '1899.99', 1),
+  ('Locean', 1, 'Bla bla bla en HTML', 14, 'images-modal/croisiere_02.jpg', '1899.99', 1),
+  ('Les antilles', 1, 'Bla bla bla en HTML', 14, 'images-modal/croisiere_01.jpg', '1899.99', 1),
+  ('La mediterrannée', 1, 'Bla bla bla en HTML', 14, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Safari0', 2, 'Bla bla bla en HTML', 14, 'images-modal/automne.jpg', '225.00', 1),
+  ('Safari 1', 2, 'Bla bla bla en HTML', 14, 'images-modal/automne.jpg', '225.00', 1),
+  ('Safari 2', 2, 'Bla bla bla en HTML', 14, 'images-modal/automne.jpg', '225.00', 1),
+  ('Safari 3', 2, 'Bla bla bla en HTML', 14, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Safari 4', 2, 'Bla bla bla en HTML', 14, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Motoneige 1 (Charlevoix, Québec)', 3, 'Bla bla bla en HTML', 10, 'images-modal/escalade_Husky.jpg', '225.00', 1),
+  ('Motoneige 2 (Charlevoix, Québec)', 3, 'Bla bla bla en HTML', 10, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Motoneige 3 (Charlevoix, Québec', 3, 'Bla bla bla en HTML', 10, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Motoneige4 (Charlevoix, Québec)', 3, 'Bla bla bla en HTML', 10, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Chiens et gîtes du grand nord1', 4, 'Bla bla bla en HTML',3 , 'images-modal/chiens_traineau.jpg', '225.00', 1),
+  ('Chiens et gîtes du grand nord2', 4, 'Bla bla bla en HTML', 3, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Chiens et gîtes du grand nord3', 4, 'Bla bla bla en HTML', 3, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Chiens et gîtes du grand nord4', 4, 'Bla bla bla en HTML', 3, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Formule famille1', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Formule famille2', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ('Formule famille3', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
+  ( 'Formule famille4', 5, 'Bla bla bla en HTML', 7, 'photo_article.jpg', '112.00', 1);
 --
--- Structure de la table `product_category`
+-- Structure de la table `forfait_category`
 --
-
-CREATE TABLE IF NOT EXISTS `product_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) categorie',
-  `name` varchar(256) NOT NULL COMMENT 'Nom du categorie',
+CREATE TABLE IF NOT EXISTS `forfait_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) catégorie',
+  `name` varchar(256) NOT NULL COMMENT 'Nom de la catégorie',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des catégories de produit du site' AUTO_INCREMENT=4 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des catégories des articles du site' AUTO_INCREMENT=6 ;
 --
--- Contenu de la table `product_category`
+-- Contenu de la table `forfait_category`
 --
-
-INSERT INTO `product_category` (`id`, `name`) VALUES
-(1, 'Musique'),
-(2, 'Sport'),
-(3, 'Sciences');
+INSERT INTO `forfait_category` (`id`, `name`) VALUES
+  (1, 'Croisiere'),
+  (2, 'Aventure'),
+  (3, 'Sport d''hiver'),
+  (4, 'Nature'),
+  (5, 'Famille');
 
 -- --------------------------------------------------------
 
@@ -91,51 +105,19 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password_hash`, `firstname`, `lastname`, `email`) VALUES
-(188, 'gp', '$2y$10$qgHMNfbLXi0C90dMVratou9TMQ/zf9Le/mIkVQF9856lYlZvVHKg2', 'Gilles', 'Pénissard', 'gilles.penissard@isi-mtl.com'),
-(189, 'pinocchio', '$2y$10$HMedEASO9EmJAYK0MayBzud05y.WacMwvtilOCivigCMFlVkGSHS2', 'Pinocchio', 'La marionetta', 'pinocchio.marionetta@isi-mtl.com'),
-(190, 'jiminy', '$2y$10$bmywgS/L.oHNJnZnI4Xc9e82yzLkQjQoFXthoBatwVBRhRQik7scW', 'Jiminy', 'Cricket', 'jiminy.cricket@isi-mtl.com');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_cnx`
---
-
-CREATE TABLE IF NOT EXISTS `user_cnx` (
-  `cnx_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de connexion',
-  `user_id` int(11) NOT NULL COMMENT 'Id de l''utilisateur',
-  `session_id` varchar(126) NOT NULL COMMENT 'l''id de session de l''utilisateur',
-  `date_in` datetime NOT NULL COMMENT 'Date de la dernière connexion',
-  `date_last_access` datetime NOT NULL COMMENT 'Date dernier accès au site',
-  `date_out` datetime DEFAULT NULL COMMENT 'Date de la dernière déconnexion',
-  PRIMARY KEY (`cnx_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Contenu de la table `user_cnx`
---
-
-INSERT INTO `user_cnx` (`cnx_id`, `user_id`, `session_id`, `date_in`, `date_last_access`, `date_out`) VALUES
-(1, 188, '_gp_', '2016-01-03 19:51:15', '2016-01-03 19:51:15', '2016-01-03 19:51:15'),
-(2, 190, '_jiminy_', '2016-01-03 19:51:15', '2016-01-03 19:51:15', NULL),
-(3, 188, '_gp_', '2016-01-03 19:51:15', '2016-01-03 19:51:15', NULL);
+  (188, 'gp', '$2y$10$qgHMNfbLXi0C90dMVratou9TMQ/zf9Le/mIkVQF9856lYlZvVHKg2', 'Gilles', 'Pénissard', 'gilles.penissard@isi-mtl.com'),
+  (189, 'pinocchio', '$2y$10$HMedEASO9EmJAYK0MayBzud05y.WacMwvtilOCivigCMFlVkGSHS2', 'Pinocchio', 'La marionetta', 'pinocchio.marionetta@isi-mtl.com'),
+  (190, 'jiminy', '$2y$10$bmywgS/L.oHNJnZnI4Xc9e82yzLkQjQoFXthoBatwVBRhRQik7scW', 'Jiminy', 'Cricket', 'jiminy.cricket@isi-mtl.com');
 
 --
 -- Contraintes pour les tables exportées
 --
 
 --
--- Contraintes pour la table `product`
+-- Contraintes pour la table `forfait`
 --
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `product_category` (`id`);
-
---
--- Contraintes pour la table `user_cnx`
---
-ALTER TABLE `user_cnx`
-  ADD CONSTRAINT `user_cnx_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `forfait`
+ADD CONSTRAINT `forfait_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `forfait_category` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
