@@ -142,7 +142,7 @@ $data = array(
                           ",
         'duree' =>14,
         'prix' => 1899.99,
-        'photo' => 'images/images-modal/croisiere_01.jpg',
+        'photo' => 'images/croisiere_01.jpg',
         'dans_carousel' => '',
         'date' => ('d-m-y'),
     ),
