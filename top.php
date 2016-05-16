@@ -11,23 +11,13 @@
         <div class="logo">
             <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
         </div>
-        <div id="header">
-            <h1> AGENCE DE VOYAGE</h1>
+        <div class="menu">
             <ul>
-                <?php
-                // Afficher le menu avec un foreach
-                foreach ($menu as $libelle => $url) {
-                    echo "<li><a href='$url'>$libelle</a></li>";
-                }
-                ?>
+                <?= require_once('views/menu.php'); ?>
             </ul>
+<!--            IL FAUT METTRE LE HTML DU MENU PAS LE REQUIRE ONCE-->
         </div>
 
-        <h2>Consultez notre catalogue</h2>
+    </header>
 
-<?php
-require_once('login_out_form.php');
-?>
-
-
-
+<!--METTRE LE PHP REQUIRE ONCE LOGGIN LOGOUT FORM-->

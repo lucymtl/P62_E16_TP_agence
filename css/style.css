@@ -1,7 +1,7 @@
 
 body {
     margin: 0 auto;
-    background: url("../images/background.jpg") no-repeat center top;
+    background: url("../images/background.jpg") no-repeat top ;
     background-color: #e7e8ea;
     width: 100%;
     font-family: 'Oswald', sans-serif;
@@ -15,19 +15,7 @@ body {
 
 }
 
-header{
-    padding-top: 50px;
-    height: 110px;
-}
 
-header > div {
-    display: inline-block;
-    width: 33%;
-    text-align: center;
-}
-.social_media ul li {
-    padding: 10px;
-}
 
 #banner{
     /*position: relative;*/
@@ -109,13 +97,38 @@ header ul li {
     line-height: 10%;
 
 }*/
+header{
+    padding-top: 50px;
+    height: 110px;
+    width:100%;
+}
+
+header > div {
+    display: inline;
+
+
+}
+.social_media ul li {
+
+    float: right;
+    margin-left: 15px;
+
+
+}
+
 .logo{
     /*margin-left: 300px;*/
-    /*float: left;*/
+    float: left;
+    width: 30%;
+
+
 }
 .menu{
     /*float: right;*/
-    text-align: right;
+    margin-top: 40px;
+    text-align: center;
+
+
 }
 .menu ul {
     width: 100%;
@@ -123,7 +136,9 @@ header ul li {
 }
 .menu ul li {
 
-    padding: 20px 50px 20px 0px;
+    padding: 20px 50px 20px 0;
+    margin-left: 10px;
+    border-bottom: 5px solid orange;
 }
 
 #for-categorie{
@@ -268,6 +283,7 @@ div ul  {
 footer{
     clear: both;
     height: 90px;
+    margin-top: 30px;
     background-image: url(../images/footer.jpg);
 }
 
@@ -288,20 +304,33 @@ legend{
 }
 
 label, input, textarea, select{
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 20px;
+    /*display: inline-block;*/
+
+    margin-bottom: 10px;
+    margin-left: 10px;
     padding: 2px;
     box-sizing: border-box;
 
 }
-label{
-    width: 20%;
+select#forfait, label#forfait{
+    float:left;
+}
+label[name="homme"]{
+    clear: both;
+
 
 }
-input[type="text"], input[type="tel"],input[type="email"], select{
+input[type="text"], input[name="email"]{
     height:40px;
-    width:70%;
+    width:100%;
+}
+select{
+    height: 40px;
+    width: 50%;
+}
+select{
+    height: 40px;
+    width: 30%;
 }
 input[type="date"], input[type="number"]{
     height:40px;
@@ -309,12 +338,19 @@ input[type="date"], input[type="number"]{
 input[type="number"]{
     width: 50px;
 }
+input[type="radio"]{
+    width: 50px;
+
+}
+
+
 .right{
     text-align: right;
 }
 
 textarea{
-    width:70%;
+    width:100%;
+    height:200px;
 }
 #body{
     height:auto;
@@ -324,8 +360,15 @@ input[type="submit"]{
     width:30%;
     height:40px;
     display: block;
-    margin:30px auto;
+    margin:20px auto;
 }
+
+
+p.effacer{
+    text-align: right;
+
+}
+
 table{
     border-collapse: collapse;
     width:100%;
@@ -533,4 +576,14 @@ p.msg_erreur{
 .for-img a, .for-info a{
     color: Orange;
     text-align: left;
+}
+li div#toto img{
+    width :260px;
+}
+#toto{
+    background-color:red ;
+    width: 500px;
+}
+li#cat_toto{
+    list-style-type:none
 }

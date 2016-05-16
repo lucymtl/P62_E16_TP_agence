@@ -1,13 +1,18 @@
 
+<?php
 
 
-        <?php
-        require_once('../data/defines.php');
+?>
 
+<div class="menu">
+            <ul>
+                <?php
 
-
-        foreach(get_menu() as $menu => $menu_data){
-            echo '<li class="active"><a href="', $menu_data,'">', $menu,'</a></li>';
-        }  ?>
-
+                foreach($menu as $menu_items => $menu_list){
+                    echo "<li><a href='$menu_list'> $menu_items</a></li>";
+                }
+                
+                ?>
+            </ul>
+        </div>
 
