@@ -76,6 +76,7 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 <li><a href="accueil.php"/a>Retour a l'accueil</li>
 
 
+
 </body>
 
 </html>
