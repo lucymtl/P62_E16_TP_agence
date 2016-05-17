@@ -1,13 +1,18 @@
-<?php require_once('data/menu_data.php');?>
+<?php require_once ('data/defines.php');?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
 
+<div id="wrap">
     <!-- *********** HEADER ************ -->
     <header>
-        <div class="social_media">
-            <ul>
-                <li><img src="images/fb-icon.png" alt = "Suivez-nous sur facebook" /></li>
-                <li><img src="images/youtube-icon.png" alt = "Suivez-nous sur youtube" /></li>
-            </ul>
-        </div>
+        
         <div class="logo">
             <img src="images/logo-boreale.png" alt = "Suivez-nous sur facebook" />
         </div>
@@ -15,9 +20,13 @@
             <ul>
                 <?= require_once('views/menu.php'); ?>
             </ul>
-<!--            IL FAUT METTRE LE HTML DU MENU PAS LE REQUIRE ONCE-->
+        </div>
+        <div class="social_media">
+            <ul>
+                <li><img src="images/fb-icon.png" alt = "Suivez-nous sur facebook" /></li>
+                <li><img name="fb" src="images/youtube-icon.png" alt = "Suivez-nous sur youtube" /></li>
+            </ul>
         </div>
 
     </header>
-
-<!--METTRE LE PHP REQUIRE ONCE LOGGIN LOGOUT FORM-->
+    
