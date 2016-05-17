@@ -24,16 +24,16 @@ $categories = get_categories();
                 <div class="button_choix">
                     <ul>
                         <li class="button_choix_txt">Il a <span
-                                class="button_choix_valeur"><?= $_SESSION[FORFAIT_CROISIERE] ?></span> forfaits dans le
+                                class="button_choix_valeur"><?= $_SESSION[$id_forfait] ?></span> forfaits dans le
                             panier
                         </li>
-                        <li><a href="<?php echo make_action_url(OP_RETIRER_TOUT, FORFAIT_CROISIERE); ?>"><img
+                        <li><a href="<?php echo make_action_url(OP_RETIRER_TOUT, $forfait); ?>"><img
                                     src="images/suprimer.jpg"></a></li>
                     </ul>
                 </div>
-                <img id="price" width="930px" src="<?= $forfait['photo'] ?>" alt=""/>
-                <div class="txt_forfait"><p><?= $forfait['description'] ?></p></div>
-                <div class="button_reserver"><a href="<?php echo make_action_url(OP_AJOUTER, FORFAIT_CROISIERE); ?>">Ajouter
+                <img id="price" width="930px" src="<?= $id_forfait['picture'] ?>" alt=""/>
+                <div class="txt_forfait"><p><?= $id_forfait['description'] ?></p></div>
+                <div class="button_reserver"><a href="<?php echo make_action_url(OP_AJOUTER, $id_forfait); ?>">Ajouter
                         au panier</a></div>
                 <br/>
             </div>
