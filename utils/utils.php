@@ -16,7 +16,7 @@
 
 <!--//faire une boucle dan l'index pour appeler les categorie faire afficher le catagories spuis forme de liens-->
 
-<?php foreach ($categories as $cat_id => $nom) { ?>
+<?php foreach ($forfait as $cat_id => $nom) { ?>
     <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
 <?php } ?>};
 

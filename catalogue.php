@@ -3,6 +3,7 @@ require_once('defines.php');
 require_once('db/conn.php');
 
 $categories = get_categories();
+
 //var_dump($categories);
 // Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
 $cat_id = null; // Initialiser u premier des items

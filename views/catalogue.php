@@ -5,14 +5,14 @@
 <div id="body">
             <?php
             if ( ! is_null($cat_id)) {
-                echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
+                echo "<h2>Les items de la catégorie " . $forfait[$cat_id] . "</h2>";
             }
             ?>
 <!-- *********** CATEGORIES ************ -->
 <div id="tab_control">
     <div id="header">
         <ul id="ongles">
-            <?php foreach ($categories as $cat_id => $nom) { ?>
+            <?php foreach ($forfait as $cat_id => $nom) { ?>
                 <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
             <?php } ?>
         </ul>
@@ -27,7 +27,7 @@
                     <div>
                         <h3><?= $item['nom'] ?></h3>
                         , <h4 class=".prix"><?= $item['prix'] ?></h4>
-                        , <h4 class=".categorie"><?= $categories[$item['categorie']] ?></h4>
+                        , <h4 class=".categorie"><?= $forfait[$item['categorie']] ?></h4>
 
                         <img src="<?= $item['photo'] ?>" alt=""/>
                     </div>

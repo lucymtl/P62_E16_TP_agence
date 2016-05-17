@@ -14,7 +14,7 @@ require_once('defines.php');
     <!-- Liens vers les categories du catalogue -->
     <div id="liens_categories">
         <ul>
-            <?php foreach ($categories as $cat_id => $categorie) { ?>
+            <?php foreach ($forfait as $cat_id => $categorie) { ?>
                 <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $categorie ?></a></li>
             <?php } ?>
         </ul>
