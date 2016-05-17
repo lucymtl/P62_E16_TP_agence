@@ -64,7 +64,7 @@ INSERT INTO `forfait` (`name`, `category_id`, `description`, `duree`, `picture`,
   ('Formule famille1', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
   ('Formule famille2', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
   ('Formule famille3', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '225.00', 1),
-  ( 'Formule famille4', 5, 'Bla bla bla en HTML', 7, 'photo_article.jpg', '112.00', 1);
+  ( 'Formule famille4', 5, 'Bla bla bla en HTML', 7, 'images-modal/croisiere_01.jpg', '112.00', 1);
 --
 -- Structure de la table `forfait_category`
 --

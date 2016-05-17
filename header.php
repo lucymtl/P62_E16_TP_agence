@@ -1,4 +1,4 @@
-<?php require_once ('data/defines.php');?>
+<?php require_once('data/menu_data.php');?>
 
     <!-- *********** HEADER ************ -->
     <header>

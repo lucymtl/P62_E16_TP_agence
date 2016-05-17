@@ -3,4 +3,4 @@
 define('CONN_HOST', '127.0.0.1');
 define('CONN_USER', 'root');
 define('CONN_PWD', '');
-define('DBNAME', 'clone_proto');//mettre nom de MA BDD
+define('DBNAME', 'tp_projet_php');//mettre nom de MA BDD

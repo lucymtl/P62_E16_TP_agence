@@ -1,10 +1,16 @@
 <?php
-require_once('data/data.php');
+require_once('defines.php');
+require_once('db/conn.php');
+
+$categories = get_categories();
+//var_dump($categories);
 // Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
 $cat_id = null; // Initialiser u premier des items
 if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $categories)) {
     $cat_id = $_GET['cat_id'];
 }
+$forfaits = get_article_list($cat_id);
+//var_dump($forfaits);
 ?>
 
 
@@ -53,21 +59,19 @@ if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $cate
 
     <ul>
         <?php
-        foreach ($data as $id => $item) {
-            if (is_null($cat_id) || $item['categorie'] == $cat_id) {
-                ?>
+        foreach ($forfaits as $id => $item) {
+        ?>
                 <li><a href="detail.php?item_id=<?= $id ?>">
                         <div id = "toto">
-                            <p><?= $item['nom'] ?>
-                                , <span class=".prix"><?= $item['prix'] ?></span>
-                                , <span class=".categorie"><?= $categories[$item['categorie']] ?></span>
+                            <p><?= utf8_encode($item['name']) ?>
+                                , <span class=".prix"><?= $item['price'] ?></span>
+                                , <span class=".categorie"><?= utf8_encode($categories[$item['category_id']]['name']) ?></span>
                             </p>
-                            <img src="<?= $item['photo'] ?>" alt=""/>
+                            <img src="<?= $item['picture'] ?>" alt=""/>
                         </div>
                     </a>
                 </li>
                 <?php
-            }
         }
         ?>
     </ul>

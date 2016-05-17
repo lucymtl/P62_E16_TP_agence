@@ -16,9 +16,9 @@ if ($mysqli->connect_errno) {
 function get_article_list($cat_id=false) {
     global $mysqli;
 // Sélectionner tous les articles (toutes les colonnes)
-    $queryStr = 'SELECT * FROM article';
+    $queryStr = 'SELECT * FROM forfait';
     // Si la catégorie est précisée, on ajoute une clause WHERE dans la requête
-    if (false !== $cat_id) {
+    if (false !== $cat_id && ! is_null($cat_id)) {
         $queryStr .= " WHERE `category_id` = " . $mysqli->real_escape_string($cat_id);
     }
 // Execution de la requête (un select)
@@ -41,7 +41,7 @@ function get_article_list($cat_id=false) {
 function get_article($id) {
     global $mysqli;
 // Sélectionner tous les articles (toutes les colonnes)
-    $queryStr = 'SELECT * FROM article WHERE `id` = ' . $mysqli->real_escape_string($id);
+    $queryStr = 'SELECT * FROM forfait WHERE `id` = ' . $mysqli->real_escape_string($id);
 // Execution de la requête (un select)
     $res = $mysqli->query($queryStr);
 // Récupération des données
@@ -61,7 +61,7 @@ function get_article($id) {
 function get_categories() {
     global $mysqli;
 // Sélectionner toutes les categories (toutes les colonnes)
-    $queryStr = 'SELECT * FROM article_category';
+    $queryStr = 'SELECT * FROM forfait_category';
 // Execution de la requête (un select)
     $res = $mysqli->query($queryStr);
 // Récupération des données

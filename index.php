@@ -1,10 +1,7 @@
 <?php
-require_once('data/data.php');//le code va cherche le tableau data
-?>
+require_once('defines.php');
 
-
-
-<?php //require_once ('header.php')?>
+//require_once ('header.php')?>
 
 
 </body>

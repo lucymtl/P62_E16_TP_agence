@@ -1,7 +1,9 @@
-<?php require_once('data/data.php');//le code va cherche le tableau data?>
-<?php require_once('top.php');//le code va cherche le tableau data?>
-<?php require_once('views/banner.php'); ?>
+<?php
+require_once('defines.php');
+require_once('top.php');//le code va cherche le tableau data
+require_once('views/banner.php');
 
+?>
 
 <div class="main" id="wrap">
     
