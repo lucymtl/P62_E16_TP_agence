@@ -15,7 +15,7 @@ $forfait = get_article_list($cat_id);
 //var_dump($forfait);
 ?>
 
-<?php require_once('views/page_top.php'); ?>
+<?php require_once('top.php'); ?>
 
 
     <h1> AGENCE DE VOYAGE</h1>
@@ -48,12 +48,12 @@ $forfait = get_article_list($cat_id);
     <ul>
         <?php
         foreach ($forfait as $id => $val) {
-            var_dump($val);
+//            var_dump($val);
         ?>
                 <li><a href="detail.php?item_id=<?= $id ?>">
                         <div id = "toto">
                             <p><?= utf8_encode($val['name']) ?>
-                                , <span class="prix"><?= $val['price'] ?></span>
+                                , <span class="prix"><?= $val['price'].'$' ?></span>
                                 , <span class="categorie"><?= utf8_encode($cat_id[$val['category_id']]['name']) ?></span>
                             </p>
                             <img src="<?= $val['picture'] ?>" alt=""/>
