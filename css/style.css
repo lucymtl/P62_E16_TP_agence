@@ -578,11 +578,14 @@ p.msg_erreur{
     text-align: left;
 }
 li div#toto img{
-    width :260px;
+    width :360px;
 }
 #toto{
     background-color:red ;
-    width: 500px;
+    width: 400px;
+}
+#categories{
+
 }
 li#cat_toto{
     list-style-type:none

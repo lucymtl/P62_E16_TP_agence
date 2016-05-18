@@ -24,7 +24,7 @@ $forfait = get_article_list($cat_id);
 //    /*Affichage du catalogue*/
 //    // Si il y a une categorie, afficher son nom
 //    if ( ! is_null($cat_id)) {
-//        echo "<h2>Les items de la catégorie " . $categories['item_id'] . "</h2>";
+//        echo "<h2>Les items de la catégorie " . $GET['item_id'] . "</h2>";
 //    }
 //    ?>
 

@@ -4,7 +4,7 @@ require_once('db/conn.php');
 //require_once('catalogue.php');
 require_once('utils/panier.php');
 require_once('utils/login_out.php');
-
+require_once('views/banner.php');
 
 //    var_dump($_GET);
 $id_forfait = 0; // Initialiser au premier des items
