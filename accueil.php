@@ -10,23 +10,39 @@ $categories = get_categories();
 
 ?>
 
+<?php
+require_once('data/menu_data.php');
 
-<h2>Consultez notre catalogue</h2>
 
-<div id="main">
-    <!-- Liens vers les categories du catalogue -->
-    <div id="liens_categories">
-        <ul>
-            <?php foreach ($categories as $cat) { ?>
-                <li><a href="catalogue.php?cat_id=<?= $cat['id'] ?>"><?= $cat['name'] ?></a></li>
-            <?php } ?>
-        </ul>
+?>
 
-    </div>
+<div class="menu">
+    <ul>
+        <?php
 
-    </div>
-    <!--Code html spécifique -->
+        foreach($menu as $menu_items => $menu_list){
+            echo "<li><a href='$menu_list'> $menu_items</a></li>";
+        }
+
+        ?>
+    </ul>
 </div>
+
+
+<!--<div id="main">-->
+<!--    <!-- Liens vers les categories du catalogue -->-->
+<!--    <div id="liens_categories">-->
+<!--        <ul>-->
+<!--            --><?php //foreach ($categories as $cat) { ?>
+<!--                <li><a href="catalogue.php?cat_id=--><?//= $cat['id'] ?><!--">--><?//= $cat['name'] ?><!--</a></li>-->
+<!--            --><?php //} ?>
+<!--        </ul>-->
+<!---->
+<!--    </div>-->
+<!---->
+<!--    </div>-->
+<!--    <!--Code html spécifique -->
+<!--</div>-->
 <?php require_once ('views/page_bottom.php'); ?>
 
 
