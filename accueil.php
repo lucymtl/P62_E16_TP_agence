@@ -4,11 +4,12 @@ require_once('defines.php');
 require_once('db/conn.php');
 require_once('utils/login_out.php');
 require_once('utils/panier.php');
+require_once ('top.php');
 $categories = get_categories();
 //var_dump($categories);
 
 ?>
-<?php require_once ('top.php'); ?>
+
 
 <h2>Consultez notre catalogue</h2>
 
@@ -26,8 +27,7 @@ $categories = get_categories();
     </div>
     <!--Code html spécifique -->
 </div>
-<?php //require_once ('views/page_bottom.php'); ?>
+<?php require_once ('views/page_bottom.php'); ?>
 
 
 
-</html>
