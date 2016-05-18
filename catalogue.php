@@ -18,7 +18,7 @@ $forfait = get_article_list($cat_id);
 <?php require_once('top.php'); ?>
 
 
-    <h1> AGENCE DE VOYAGE</h1>
+
     <h2>Consultez notre catalogue</h2>
 
 <!--    --><?php
