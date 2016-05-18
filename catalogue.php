@@ -3,7 +3,6 @@ require_once('defines.php');
 require_once('db/conn.php');
 require_once('utils/login_out.php');
 require_once('utils/panier.php');
-
 $categories = get_categories();
 
 //var_dump($categories);
@@ -12,43 +11,13 @@ $cat_id = false; // Initialiser u premier des items
 if (array_key_exists('item_id', $_GET) && array_key_exists($_GET['item_id'], $categories)) {
     $cat_id = $_GET['item_id'];
 }
-$forfaits = get_article_list($cat_id);
-//var_dump($forfaits);
+$forfait = get_article_list($cat_id);
+//var_dump($forfait);
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<!--    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">-->
-<style>
-    img{
-        width :260px;
-    }
-
-    #toto{
-
-        background-color:red ;
-        width: 500px;
-
-    }
-
-    li{
-        list-style-type:none
-    }
-
-</style>
-
-</head>
+<?php require_once('views/page_top.php'); ?>
 
 
-<body>
-
-<?php //require_once ('views/page_top.php'); ?>
-<div id="main">
-    <!--Code html spécifique -->
     <h1> AGENCE DE VOYAGE</h1>
     <h2>Consultez notre catalogue</h2>
 
@@ -63,45 +32,38 @@ $forfaits = get_article_list($cat_id);
     <?php
     // Si il y a une categorie, afficher son nom
     if (false !== $cat_id) {
-        echo "<h2>Les items de la catégorie " . $categories[$cat_id]['name'] . "</h2>";
+        echo "<h2>Les items de la catégorie " . $cat_id['name'] . "</h2>";
     }
     ?>
 
     <?php
     /* Affichage du catalogue */
-    if (empty($categories)) {
-        echo "<p>Cette catégorie est vide !.</p>";
-    } else {
+    if (empty($forfait)) {
+        echo "<p>Cette catégorie est vide !</p>";
+    }else{
     ?>
-
 
 
 
     <ul>
         <?php
-        foreach ($categories as $id => $forfait) {
+        foreach ($forfait as $id => $val) {
+            var_dump($val);
         ?>
                 <li><a href="detail.php?item_id=<?= $id ?>">
                         <div id = "toto">
-                            <p><?= utf8_encode($forfait['name']) ?>
-                                , <span class=".prix"><?= $forfait['price'] ?></span>
-                                , <span class=".categorie"><?= utf8_encode($categories[$forfait['category_id']]['name']) ?></span>
+                            <p><?= utf8_encode($val['name']) ?>
+                                , <span class="prix"><?= $val['price'] ?></span>
+                                , <span class="categorie"><?= utf8_encode($cat_id[$val['category_id']]['name']) ?></span>
                             </p>
-                            <img src="<?= $forfait['picture'] ?>" alt=""/>
+                            <img src="<?= $val['picture'] ?>" alt=""/>
                         </div>
-                    </a>
-                </li>
-                <?php
-        }
+                </a>
+            </li>
+            <?php
+        } // foreach
+        } // else if empty
         ?>
     </ul>
 </div>
-<!--<h2>VOTRE PANIER EST VIDE</h2>-->
-<!--<li><a href="accueil.php"/a>Retour a l'accueil</li>-->
-<!---->
-<!---->
-<!---->
-<!--</body>-->
-<!---->
-<!--</html>-->
-
+<?php require_once('views/page_bottom.php'); ?>
