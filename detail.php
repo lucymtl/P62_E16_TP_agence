@@ -2,8 +2,11 @@
 require_once('top.php');//le code va cherche le tableau data
 require_once('defines.php');
 require_once('db/conn.php');
+require_once('catalogue.php');
+
 require_once('utils/panier.php');
 require_once('utils/login_out.php');
+
 
 //    var_dump($_GET);
 $id_forfait = 0; // Initialiser au premier des items
@@ -17,6 +20,9 @@ $categories = get_categories();
 
 ?>
 <div id="wrap">
+
+
+
     <div id="panier">
         <?php if (is_null($forfait)) { ?>
             <p>Cet article n'existe pas !</p>

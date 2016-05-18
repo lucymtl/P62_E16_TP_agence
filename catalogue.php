@@ -7,8 +7,8 @@ $categories = get_categories();
 //var_dump($categories);
 // Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
 $cat_id = null; // Initialiser u premier des items
-if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $categories)) {
-    $cat_id = $_GET['cat_id'];
+if (array_key_exists('item_id', $_GET) && array_key_exists($_GET['item_id'], $categories)) {
+    $cat_id = $_GET['item_id'];
 }
 $forfaits = get_article_list($cat_id);
 //var_dump($forfaits);
@@ -54,13 +54,13 @@ $forfaits = get_article_list($cat_id);
     /*Affichage du catalogue*/
     // Si il y a une categorie, afficher son nom
     if ( ! is_null($cat_id)) {
-        echo "<h2>Les items de la catégorie " . $categories[$cat_id] . "</h2>";
+        echo "<h2>Les items de la catégorie " . $categories['item_id'] . "</h2>";
     }
     ?>
 
     <ul>
         <?php
-        foreach ($forfaits as $id => $item) {
+        foreach ($forfait as $id => $item) {
         ?>
                 <li><a href="detail.php?item_id=<?= $id ?>">
                         <div id = "toto">

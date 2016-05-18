@@ -8,8 +8,8 @@ require_once('../utils/panier.php');
 <!--// Si il y a une categorie, afficher son nom-->
 <div id="body">
             <?php
-            if ( ! is_null($cat_id)) {
-                echo "<h2>Les items de la catégorie " . $forfait[$cat_id] . "</h2>";
+            if ( ! is_null($forfait)) {
+                echo "<h2>Les items de la catégorie " . $forfait['item_id'] . "</h2>";
             }
             ?>
 <!-- *********** CATEGORIES ************ -->
@@ -17,7 +17,7 @@ require_once('../utils/panier.php');
     <div id="header">
         <ul id="ongles">
             <?php foreach ($forfait as $cat_id => $nom) { ?>
-                <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $nom ?></a></li>
+                <li><a href="catalogue.php?item_id=<?= $cat_id ?>"><?= $nom ?></a></li>
             <?php } ?>
         </ul>
 
@@ -27,13 +27,13 @@ require_once('../utils/panier.php');
     <div id="for-categorie">
         <div class="forfait_categorie">
 
-            <li><a href="detail.php?item_id=<?= $id ?>">
+            <li><a href="detail.php?item_id=<?= $forfait ?>">
                     <div>
-                        <h3><?= $item['nom'] ?></h3>
-                        , <h4 class=".prix"><?= $item['prix'] ?></h4>
+                        <h3><?= $forfait['name'] ?></h3>
+                        , <h4 class=".prix"><?= $forfait['price'] ?></h4>
                         , <h4 class=".categorie"><?= $forfait[$item['categorie']] ?></h4>
 
-                        <img src="<?= $item['photo'] ?>" alt=""/>
+                        <img src="<?= $forfait['picture'] ?>" alt=""/>
                     </div>
                 </a>
             </li>
