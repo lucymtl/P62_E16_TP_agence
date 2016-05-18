@@ -1,6 +1,6 @@
 <?php
 require_once('top.php');//le code va cherche le tableau data
-require_once('db/defines.php');
+require_once('defines.php');
 require_once('db/conn.php');
 require_once('utils/panier.php');
 require_once('utils/login_out.php');
