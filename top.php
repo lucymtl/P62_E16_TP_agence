@@ -11,6 +11,8 @@
 
 <div id="wrap">
     <!-- *********** HEADER ************ -->
+
+<!--    --><?//= require_once('header.php'); ?>
     <header>
         
         <div class="logo">
@@ -18,7 +20,7 @@
         </div>
         <div class="menu">
             <ul>
-                <?= require_once('views/menu.php'); ?>
+<!--                --><?//= require_once('views/menu.php'); ?>
             </ul>
         </div>
         <div class="social_media">

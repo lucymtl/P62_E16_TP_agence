@@ -18,8 +18,7 @@ $forfait = get_article_list($cat_id);
 <?php require_once('top.php'); ?>
 
 
-
-    <h2>Consultez notre catalogue</h2>
+    <h2>Notre catalogue</h2>
 
 <!--    --><?php
 //    /*Affichage du catalogue*/
@@ -45,13 +44,13 @@ $forfait = get_article_list($cat_id);
 
 
 
-    <ul>
+    <ul id="categories">
         <?php
         foreach ($forfait as $id => $val) {
 //            var_dump($val);
         ?>
                 <li><a href="detail.php?item_id=<?= $id ?>">
-                        <div id = "toto">
+                        <div id = "toto" >
                             <p><?= utf8_encode($val['name']) ?>
                                 , <span class="prix"><?= $val['price'].'$' ?></span>
                                 , <span class="categorie"><?= utf8_encode($cat_id[$val['category_id']]['name']) ?></span>

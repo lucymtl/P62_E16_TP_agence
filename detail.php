@@ -6,7 +6,7 @@ require_once('utils/panier.php');
 require_once('utils/login_out.php');
 
 
-    var_dump($_GET);
+//    var_dump($_GET);
 $id_forfait = 0; // Initialiser au premier des items
 if (array_key_exists('item_id', $_GET)) {
     $id_forfait = $_GET['item_id'];

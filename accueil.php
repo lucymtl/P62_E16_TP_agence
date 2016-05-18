@@ -9,10 +9,8 @@ $categories = get_categories();
 //var_dump($categories);
 
 ?>
-
 <?php
 require_once('data/menu_data.php');
-
 
 ?>
 
@@ -30,7 +28,7 @@ require_once('data/menu_data.php');
 
 
 <!--<div id="main">-->
-<!--    <!-- Liens vers les categories du catalogue -->-->
+<!--    <!-- Liens vers les categories du catalogue -->
 <!--    <div id="liens_categories">-->
 <!--        <ul>-->
 <!--            --><?php //foreach ($categories as $cat) { ?>
@@ -43,7 +41,11 @@ require_once('data/menu_data.php');
 <!--    </div>-->
 <!--    <!--Code html spécifique -->
 <!--</div>-->
-<?php require_once ('views/page_bottom.php'); ?>
+<?php
+require_once('views/forfaits.php');
+require_once ('views/page_bottom.php');
+require_once('views/footer.php');
+?>
 
 
 
