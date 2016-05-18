@@ -49,3 +49,5 @@ $categories = get_categories();
 <?php require_once('views/forfaits.php'); ?></div>
 
 <?php require_once('views/footer.php'); ?>
+
+
