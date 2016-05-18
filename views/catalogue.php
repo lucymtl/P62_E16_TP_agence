@@ -1,4 +1,8 @@
 <?php
+require_once('../top.php');//le code va cherche le tableau data
+require_once('../defines.php');
+require_once('../db/conn.php');
+require_once('../utils/panier.php');
 ?>
 <!--/*Affichage du catalogue*/-->
 <!--// Si il y a une categorie, afficher son nom-->

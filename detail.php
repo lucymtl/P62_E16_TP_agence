@@ -1,8 +1,9 @@
 <?php
 require_once('top.php');//le code va cherche le tableau data
-require_once('defines.php');
+require_once('db/defines.php');
 require_once('db/conn.php');
 require_once('utils/panier.php');
+require_once('utils/login_out.php');
 
 //    var_dump($_GET);
 $id_forfait = 0; // Initialiser au premier des items
@@ -46,7 +47,8 @@ $categories = get_categories();
 
     </div>
 </div><?php require_once('views/video.php'); ?>
-<?php require_once('views/forfaits.php'); ?></div>
+<?php require_once('views/forfaits.php'); ?>
+<?php //require_once('views/catalogue.php'); ?><!--</div>-->
 
 <?php require_once('views/footer.php'); ?>
 

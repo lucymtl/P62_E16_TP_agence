@@ -13,16 +13,19 @@ $login_message = ''; // Message à afficher en cas de bonne ou de mauvaise conne
 $user_is_loggedIn = false; // Indique que l'utilisateur est connecté ou ne l'est pas
 $username = null; // Valeur du username
 $password = null; // Valeur du password
-session_start(); // Ne plus le mettre ailleurs si le script courant est sur toutes les pages
- // L'utilisateur est-il en train de se connecter ?
+// Activation des sessions (si pas déjà activées)
+if (PHP_SESSION_NONE === session_status()) {
+    session_start();
+}
+// L'utilisateur est-il en train de se connecter ?
 if (array_key_exists('connect', $_POST)
     && array_key_exists('username', $_POST)
     && array_key_exists('password', $_POST)) {
     // L'utilisateur cherche à se connecter ....
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    require_once('data/_authenticate.php'); // Appel du script qui gère l'authentification
-    if (authenticate($username, $password)) {
+    require_once('../db/password_functs.php'); // Appel du script qui gère l'authentification
+    if (user_authenticate($username, $password)) {
         // L'utilisateur est authentifié
         $_SESSION[PSESS_USERNAME] = $username;
         $user_is_loggedIn = true;
