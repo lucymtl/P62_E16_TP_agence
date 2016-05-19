@@ -1,7 +1,6 @@
 <?php
-
 require_once('defines.php');
-require_once('db/conn.php');
+require_once(ROOT_DIR . 'db/conn.php');
 require_once('utils/login_out.php');
 require_once('utils/panier.php');
 require_once ('top.php');
