@@ -22,4 +22,3 @@ if ( ! array_key_exists(PSESS_CARD, $_SESSION)) {
     $_SESSION[PSESS_CARD] = array();
 };
 $panier = &$_SESSION[PSESS_CARD]; // Référence sur le panier dans la session;
-?>

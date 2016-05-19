@@ -1,15 +1,13 @@
 <?php
 
-define('ACCUEIL', 'Accueil');
-define('APROPOS', 'À propos');
-define('CONTACT', 'Contact');
+define('ACCUEIL', 'ACCEUIL');
+define('CATALOGUE', 'CATALOGUE');
+define('CONTACT', 'CONTACT');
 
 $menu = array(
     ACCUEIL => 'accueil.php',
-    APROPOS  => 'apropos.php',
-    /*'Catalogue' => 'catalogue.php',*/
-    CONTACT  => 'formulaire.php',
-    CONTACT  => 'formulaire.php',
+    CATALOGUE  => 'catalogue.php',
+    CONTACT  => 'contact.php',
 
 );
 ?>

@@ -10,8 +10,8 @@ $categories = get_categories();
 ?>
 <?php
 require_once('data/menu_data.php');
-
 ?>
+
 
 <div class="menu">
     <ul>

@@ -19,14 +19,16 @@ $forfait = get_article_list($cat_id);
 
 
     <h2>Notre catalogue</h2>
-
-<!--    --><?php
-//    /*Affichage du catalogue*/
-//    // Si il y a une categorie, afficher son nom
-//    if ( ! is_null($cat_id)) {
-//        echo "<h2>Les items de la catégorie " . $categories['item_id'] . "</h2>";
-//    }
-//    ?>
+<!--<div id="liens_categories">-->
+<!--    <ul>-->
+<!--        --><?php //foreach ($categories as $cat) { ?>
+<!--            <li><a href="catalogue.php?cat_id=--><?//= $cat['id'] ?><!--">--><?//= $cat['name'] ?><!--</a></li>-->
+<!---->
+<!--        --><?php}// ?>
+<!--    </ul>-->
+<!---->
+<!---->
+<!--</div>-->
 
     <?php
     // Si il y a une categorie, afficher son nom

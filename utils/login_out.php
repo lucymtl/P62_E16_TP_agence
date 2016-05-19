@@ -2,7 +2,7 @@
 require_once(ROOT_DIR.'utils/common.php');
 define('PSESS_USERNAME', 'username');
 
-$login_message = ''; // Message à afficher en cas de bonne ou de mauvaise connexion
+$login_message = 'Essayer encore'; // Message à afficher en cas de bonne ou de mauvaise connexion
 $user_is_loggedIn = false; // Indique que l'utilisateur est connecté ou ne l'est pas
 $username = null; // Valeur du username
 $password = null; // Valeur du password
